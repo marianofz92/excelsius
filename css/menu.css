@@ -18,6 +18,37 @@ header {
     width: 100%;
 }
 
+#etiqueta-ingresar {
+    position: relative;  
+    left: 93%;
+    top: -12px;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px;
+    padding-top: 5px;
+    border: solid 2px;
+    text-decoration: none;
+    border-radius: 10px;
+    border-top: none;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+#etiqueta-ingresar img {
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+}
+
+#item-ingresar {
+    display: none;
+}
+
+#item-ingresar img {
+    width: 18px;
+    height: 18px;
+    margin-left: 5px
+}
+
 .menu ul {
     top: 100px;
     left: 0;
@@ -231,4 +262,11 @@ header .contenedor{
         color: #fff;
     }
     
+    #etiqueta-ingresar {
+        display: none;
+    }
+    
+    #item-ingresar {
+    display: block;
+    }
 }
