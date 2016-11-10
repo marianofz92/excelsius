@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+
+    $usuario=$_SESSION['username']; 
+    $enlace='contacto.php';
+    
+} else {
+    
+    $usuario='ingresar';
+    $enlace='login.php';
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -22,12 +38,12 @@
                 
                   <ul>  
                      <li><a href="index.php">Inicio</a></li>
-                     <li><a href="servicios.html">Servicios</a></li>
-                     <li><a href="nosotros.html">Nosotros</a></li>
-                     <li><a href="noticias.html">Noticias</a></li>
+                     <li><a href="servicios.php">Servicios</a></li>
+                     <li><a href="nosotros.php">Nosotros</a></li>
+                     <li><a href="noticias.php">Noticias</a></li>
                     <li><a href="profesionales.php">Profesionales</a></li>
-                    <li><a href="asociados.html">Asociados</a></li>
-                     <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="asociados.php">Asociados</a></li>
+                     <li><a href="contacto.php">Contacto</a></li>
                   <li class="submenu"><a href="index.php#equipo_m">Buscar<span class="icon-search"></span></a></li>
                          <ul>
                              <li>Especialidad<select name="" id="">
@@ -42,31 +58,31 @@
                   </ul> 
                </nav>  
             </div>
+            
+            <a href="<?php echo $enlace ?>" class="etiqueta-ingresar"> <?php echo $usuario ?> <img src="img/user.png" alt=""> </a>
+            
         </header>
         
         <main>
            <section class="contendeor" id="medico1">
                   <article>
-                     <img src="img/consultora-2.jpg" alt=""> 
+                     <img src="img/rondia-grande.jpg" alt=""> 
                          <div>
                              <p>
-                             <h4>Cecilia Luna</h4>
-                             <h6>Consultora</h6>
+                             <h4>Rondía</h4>
+                             <h6>Laboratorio bioquímico</h6>
                              <ul>
-                                 <li>Técnica en RR HH.</li>
-                                 <li>Diplomada en: <br>
-                                    Gestión y Dirección en servicios de Salud. <br>
-                                    Auditoría y Calidad en organizaciones de salud. <br>
-                                    Gestión y Administración de RR HH en el contexto organizacional. <br>
-                                    Habilidades Directivas y Liderazgo. <br>
-                                 </li>    
-                                 <li>Servicios: <br>
-                                 Adminsitración y Gestión de RR HH, Marketing, Comunicación. <br>
-                                 Organizacion de eventos corporativos, jornadas de capacitación y congresos.<br>
-                                 </li>
-                                 <li>Dirección: Monteagudo 857 4° C.</li>
-                                 <li>Teléfonos: 381-4225733 / 381-154401774.</li>
-                                 <li>E-mail: lunamc1106@gmail.com</li>
+                                 <li>Química clínica</li>
+                               Bacteriología. <br>
+                               Hematología. <br>
+                               Pesquita neonatal. <br>
+                               Gases en sangre. <br>
+                               Alta complejidad. <br>
+                               Marcadores virales. <br>
+                               Urgencias.</li>
+                                 <li>Dirección: San Juan  570. - S.M. DE TUCUMÁN.</li>
+                                 <li>Teléfonos: 0381-450 4515</li>
+                                 <li>E-mail:rondialab@yahoo.com.ar</li>
                              </ul>
                          </div>
                   </article>
@@ -74,8 +90,8 @@
            
            <section class="contenedor" id="mapa1">
                <h4>Ubicación</h4>
-               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.6229804357217!2d-65.19970458495708!3d-26.820130883167412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c18a86de617%3A0xe65fbbdff1e9e8e3!2sMonteagudo+857%2C+San+Miguel+de+Tucum%C3%A1n%2C+Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1478196727087" allowfullscreen></iframe>
-               <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1ses-419!2sar!4v1478196859508!6m8!1m7!1sAx3zlIxHpsOsARaGBPHgRQ!2m2!1d-26.82019736113863!2d-65.19752442035694!3f126.11795906449989!4f4.165092086749638!5f0.942667663825729" allowfullscreen></iframe>
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.455166025804!2d-65.20658478536596!3d-26.825471583165275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c1714310519%3A0x91d9f08d4e6171a4!2sSan+Juan+570%2C+T4000DPL+San+Miguel+de+Tucum%C3%A1n%2C+Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1477347477028" allowfullscreen></iframe>
+               <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1ses-419!2sar!4v1477347527890!6m8!1m7!1s9KinT-SYYr2G0TPgi60krA!2m2!1d-26.8253889531458!2d-65.20439865091069!3f180.95274443352483!4f-4.541235371013528!5f0.7820865974627469" allowfullscreen></iframe>
            </section>
            
         </main>

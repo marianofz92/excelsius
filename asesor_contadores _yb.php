@@ -1,4 +1,20 @@
 <?php
+session_start();
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+
+    $usuario=$_SESSION['username']; 
+    $enlace='contacto.php';
+    
+} else {
+    
+    $usuario='ingresar';
+    $enlace='login.php';
+}
+?>
+
+
+<?php
 require_once('conn/connect.php');
 $consulta ="SELECT * FROM profesionales_asesores WHERE id_profesionales_asesores =2";
 $resultado=$connect->query($consulta);
@@ -29,11 +45,11 @@ $update= $connect->query($insert) or die ("No se ha podido actualizar la pagina"
                 
                   <ul>  
                      <li><a href="index.php">Inicio</a></li>
-                     <li><a href="servicios.html">Servicios</a></li>
-                     <li><a href="nosotros.html">Nosotros</a></li>
-                     <li><a href="noticias.html">Noticias</a></li>
+                     <li><a href="servicios.php">Servicios</a></li>
+                     <li><a href="nosotros.php">Nosotros</a></li>
+                     <li><a href="noticias.php">Noticias</a></li>
                     <li><a href="profesionales.php">Profesionales</a></li>
-                     <li><a href="contacto.html">Contacto</a></li>
+                     <li><a href="contacto.php">Contacto</a></li>
                    <li class="submenu"><a href="index.php#equipo_m">Buscar<span class="icon-search"></span></a></li>
                          <ul>
                              <li>Especialidad<select name="" id="">
@@ -48,6 +64,9 @@ $update= $connect->query($insert) or die ("No se ha podido actualizar la pagina"
                   </ul> 
                </nav>  
             </div>
+            
+            <a href="<?php echo $enlace ?>" class="etiqueta-ingresar"> <?php echo $usuario ?> <img src="img/user.png" alt=""> </a>
+            
         </header>
         <main>
            <section class="contendeor" id="medico1">

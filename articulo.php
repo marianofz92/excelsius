@@ -1,3 +1,20 @@
+
+<?php
+session_start();
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+
+    $usuario=$_SESSION['username']; 
+    $enlace='contacto.php';
+    
+} else {
+    
+    $usuario='ingresar';
+    $enlace='login.php';
+}
+?>
+
+
 <?php require_once('conn/connect.php');
 
 ?>
@@ -70,6 +87,9 @@ $update= $connect->query($insert) or die ("No se ha podido actualizar la pagina"
 </ul> 
 </nav> 
 </div>
+
+<a href="<?php echo $enlace ?>" class="etiqueta-ingresar"> <?php echo $usuario ?> <img src="img/user.png" alt=""> </a>
+
 </header>
 
 <div id="contenedor" class="center">

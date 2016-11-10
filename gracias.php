@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+
+    $usuario=$_SESSION['username']; 
+    $enlace='contacto.php';
+    
+} else {
+    
+    $usuario='ingresar';
+    $enlace='login.php';
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -24,12 +40,12 @@
 <ul> 
 
 <li><a href="index.php">Inicio</a></li>
-<li><a href="nosotros.html">Nosotros</a></li>
+<li><a href="nosotros.php">Nosotros</a></li>
 <li><a href="profesionales.php">Profesionales</a></li>
-<li><a href="asociados.html">Asociados</a></li>
-<li><a href="servicios.html">Servicios</a></li>
-<li><a href="noticias.html">Noticias</a></li>
-<li><a href="contacto.html">Contacto</a></li>
+<li><a href="asociados.php">Asociados</a></li>
+<li><a href="servicios.php">Servicios</a></li>
+<li><a href="noticias.php">Noticias</a></li>
+<li><a href="contacto.php">Contacto</a></li>
 <li class="submenu"><a href="index.php#equipo_m">Buscar<span class="icon-search"></span></a></li>
 <ul>
 <li>Especialidad<select name="" id="">
@@ -45,6 +61,9 @@
 </ul> 
 </nav> 
 </div>
+
+<a href="<?php echo $enlace ?>" class="etiqueta-ingresar"> <?php echo $usuario ?> <img src="img/user.png" alt=""> </a>
+
 </header>
         
        <main>

@@ -3,6 +3,22 @@ session_start();
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
+    $usuario=$_SESSION['username']; 
+    $enlace='contacto.php';
+    
+} else {
+    
+    $usuario='ingresar';
+    $enlace='login.php';
+}
+?>
+
+
+<?php
+session_start();
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+
 } else {
     echo "Esta pagina es solo para usuarios registrados.<br>";
     echo "<br><a href='login.html'>Login</a>";
