@@ -66,12 +66,12 @@ $update= $connect->query($insert) or die ("No se ha podido actualizar la pagina"
 <ul> 
 
 <li><a href="index.php">Inicio</a></li>
-<li><a href="nosotros.html">Nosotros</a></li>
+<li><a href="nosotros.php">Nosotros</a></li>
 <li><a href="profesionales.php">Profesionales</a></li>
-<li><a href="asociados.html">Asociados</a></li>
-<li><a href="servicios.html">Servicios</a></li>
-<li><a href="noticias.html">Noticias</a></li>
-<li><a href="contacto.html">Contacto</a></li>
+<li><a href="asociados.php">Asociados</a></li>
+<li><a href="servicios.php">Servicios</a></li>
+<li><a href="noticias.php">Noticias</a></li>
+<li><a href="contacto.php">Contacto</a></li>
 <li class="submenu"><a href="index.php#equipo_m">Buscar<span class="icon-search"></span></a></li>
 <ul>
 <li>Especialidad<select name="" id="">
